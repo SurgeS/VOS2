@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails VOS_shopping_list: development" uuid="72af6aee-9068-4404-8624-16d1218181a0">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails VOS_shopping_list: test" uuid="5143b57a-5b1c-4fd0-9cd8-4d922e5e68d5">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails VOS_shopping_list: production" uuid="e6875cd0-67e3-4d66-a180-b34888ab534a">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>
