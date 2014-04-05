@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-VOSShoppingList::Application.config.secret_key_base = 'c3b27c113db9d30d3d64af6eec19b97db0244c1da204d6a6ef8c11efbc61d5d2845b2a7066e8f45fadc53da04a5076c7fa2466fa9f17b256ecdc70de5fd4974b'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+VOSShoppingList::Application.config.secret_key_base = secure_token
