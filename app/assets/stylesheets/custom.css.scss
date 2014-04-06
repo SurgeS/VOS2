@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
 
-
 $grayLight: #999;
 
 /* universal */
@@ -43,6 +42,7 @@ h1 {
   text-align: center;
 }
 
+
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
@@ -71,6 +71,7 @@ p {
   &:hover {
     color: #6ca0bb;
     text-decoration: none;
+
   }
 }
 
