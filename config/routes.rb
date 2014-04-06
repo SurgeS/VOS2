@@ -1,11 +1,13 @@
 VOSShoppingList::Application.routes.draw do
 
-  get "users/new"
+  resources :users
+
   root 'basic_pages#home'
 
-  match '/signup',  to: 'users#new',            via: 'get'
-  match '/about',   to: 'basic_pages#about',   via: 'get'
+  match '/signup', to: 'users#new', via: 'get'
+  match '/about', to: 'basic_pages#about', via: 'get'
   match '/contact', to: 'basic_pages#contact', via: 'get'
+  match '/terms', to: 'basic_pages#terms', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
