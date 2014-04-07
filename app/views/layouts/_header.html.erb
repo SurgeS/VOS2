@@ -1,7 +1,11 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "ShopList", root_path, id: "logo" %>
+      <% if signed_in? %>
+        <%= link_to "ShopList", '#', id: "logo" %>
+      <% else %>
+        <%= link_to "ShopList", root_path, id: "logo" %>
+      <%end%>
       <nav>
         <ul class="nav pull-left">
           <% if signed_in? %>
@@ -12,10 +16,11 @@
       </nav>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Domov", root_path %></li>
           <% if signed_in? %>
+          <li><%= link_to "Domov", '#' %></li>
               <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
           <% else %>
+              <li><%= link_to "Domov", root_path %></li>
               <li><%= link_to "Prihlásiť sa", signin_path %></li>
               <%end%>
         </ul>
