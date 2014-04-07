@@ -4,14 +4,20 @@
       <%= link_to "ShopList", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-left">
-      <li><%= link_to "Produkty", '#' %></li>
-      <li><%= link_to "Zoznam", '#' %></li>
+          <% if signed_in? %>
+            <li><%= link_to "Produkty", '#' %></li>
+            <li><%= link_to "Zoznam", '#' %></li>
+          <%end%>
         </ul>
       </nav>
       <nav>
         <ul class="nav pull-right">
           <li><%= link_to "Domov", root_path %></li>
-          <li><%= link_to "Prihlásiť sa", signin_path %></li>
+          <% if signed_in? %>
+              <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+          <% else %>
+              <li><%= link_to "Prihlásiť sa", signin_path %></li>
+              <%end%>
         </ul>
       </nav>
     </div>
