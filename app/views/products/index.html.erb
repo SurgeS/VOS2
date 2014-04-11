@@ -3,18 +3,10 @@
 
 <%= will_paginate %>
 <ul class="products">
-  <% @products.each do |product| %>
-      <li>
-        <%= product.name %>
-        <%= link_to 'Pridať do zoznamu', '#' %>
-      </li>
-  <% end %>
+  <%= render @products %>
 </ul>
 <%= will_paginate %>
 
   <br>
-  <%=form_for(@product) do |p|%>
-      <%= p.text_field :name %>
-      <%= p.submit "Pridať produkt", class: "btn btn-success" %>
-  <% end %>
+<%= render 'new_product' %>
 

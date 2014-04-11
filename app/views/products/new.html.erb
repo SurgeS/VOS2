@@ -4,11 +4,7 @@
 <div class="row">
   <div class="span1 offset2">
     <div class="col-md-4">
-      <%=form_for(@product) do |p|%>
-          <%= p.label :name, 'Názov' %>
-          <%= p.text_field :name %>
-          <%= p.submit "Pridať produkt", class: "btn btn-success" %>
-      <% end %>
+      <%= render 'new_product' %>
     </div>
   </div>
 </div>

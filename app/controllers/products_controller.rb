@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @prices = @product.prices.paginate(page: params[:page])
   end
 
   def create
