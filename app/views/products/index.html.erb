@@ -1,1 +1,11 @@
+<%provide(:title, '| Produkty')%>
 <h1>Tu budú všetky produkty</h1>
+
+<ul class="products">
+  <% @products.each do |product| %>
+      <li>
+        <%= product.name %>
+        <%= link_to 'Pridať do zoznamu', '#' %>
+      </li>
+  <% end %>
+</ul>

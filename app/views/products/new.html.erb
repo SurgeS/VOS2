@@ -7,10 +7,6 @@
       <%=form_for(@product) do |p|%>
           <%= p.label :name, 'Názov' %>
           <%= p.text_field :name %>
-          <%= p.label :price, 'Cena' %>
-          <%= p.text_field :price %>
-          <%= p.label :shop, 'Obchod' %>
-          <%= p.text_field :shop %>
           <%= p.submit "Pridať produkt", class: "btn btn-success" %>
       <% end %>
     </div>
