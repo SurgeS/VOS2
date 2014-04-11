@@ -1,0 +1,13 @@
+<%provide(:title, '| Zoznamy')%>
+<h1>Zoznamy</h1>
+
+<p>Miesto na vytvorenie nákupných zoznamov</p>
+<p>Produkty si do nich môžete pridávať priamo zo zoznamu produktov</p>
+
+ <%= render @shoplists %>
+
+
+<div class="row">
+  <p> <%= render 'new_shoplist' %></p>
+</div>
+
