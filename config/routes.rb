@@ -1,5 +1,6 @@
 VOSShoppingList::Application.routes.draw do
 
+  get "products/new"
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
