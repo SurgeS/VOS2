@@ -14,7 +14,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/VOS_shopping_list@crawler__1_.coverage" NAME="crawler (1) Coverage Results" MODIFIED="1397167469671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Desktop" MODULE_NAME="VOS_shopping_list" />
     <SUITE FILE_PATH="coverage/VOS_shopping_list@db_create_all__VOS_shopping_list.coverage" NAME="db:create:all: VOS_shopping_list Coverage Results" MODIFIED="1396690691555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VOS_shopping_list" />
-    <SUITE FILE_PATH="coverage/VOS_shopping_list@Development__VOS_shopping_list.coverage" NAME="Development: VOS_shopping_list Coverage Results" MODIFIED="1397231155020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VOS_shopping_list" />
+    <SUITE FILE_PATH="coverage/VOS_shopping_list@Development__VOS_shopping_list.coverage" NAME="Development: VOS_shopping_list Coverage Results" MODIFIED="1397237881940" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VOS_shopping_list" />
     <SUITE FILE_PATH="coverage/VOS_shopping_list@crawler.coverage" NAME="crawler Coverage Results" MODIFIED="1397155846072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../../Dokumenty/GitHub/great-web-applications/lecture5" MODULE_NAME="VOS_shopping_list" />
     <SUITE FILE_PATH="coverage/VOS_shopping_list@db_migrate__VOS_shopping_list.coverage" NAME="db:migrate: VOS_shopping_list Coverage Results" MODIFIED="1397231149369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="VOS_shopping_list" />
   </component>
@@ -51,7 +51,7 @@
       <file leaf-file-name="data.rake" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/tasks/data.rake">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="3" selection-start="918" selection-end="918" vertical-scroll-proportion="1.0142045" vertical-offset="153" max-vertical-offset="612">
+            <state line="7" column="6" selection-start="148" selection-end="148" vertical-scroll-proportion="-0.09659091" vertical-offset="153" max-vertical-offset="629">
               <folding />
             </state>
           </provider>
@@ -60,7 +60,7 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/products/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="17" selection-start="128" selection-end="128" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="306">
+            <state line="3" column="26" selection-start="79" selection-end="79" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="323">
               <folding />
             </state>
           </provider>
@@ -69,7 +69,16 @@
       <file leaf-file-name="crawler.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/tasks/crawler.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="4" selection-start="19" selection-end="667" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1734">
+            <state line="16" column="1" selection-start="434" selection-end="434" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1734">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="price.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/price.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="48" selection-start="172" selection-end="172" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
               <folding />
             </state>
           </provider>
@@ -124,16 +133,16 @@
         <option value="$PROJECT_DIR$/app/views/layouts/_product.html.erb" />
         <option value="$PROJECT_DIR$/app/views/products/_new_product.html.erb" />
         <option value="$PROJECT_DIR$/app/views/products/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/products/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20140411152058_add_index_prices.rb" />
         <option value="$PROJECT_DIR$/app/models/product.rb" />
-        <option value="$PROJECT_DIR$/app/models/price.rb" />
         <option value="$PROJECT_DIR$/app/controllers/products_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/products/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/products/_product.html.erb" />
         <option value="$PROJECT_DIR$/app/views/prices/_price.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/products/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/price.rb" />
         <option value="$PROJECT_DIR$/lib/tasks/data.rake" />
       </list>
     </option>
@@ -808,7 +817,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -820,7 +829,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30267558" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27666667" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27591974" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1036,23 +1045,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/price.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="51" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/product.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="39" selection-start="141" selection-end="141" vertical-scroll-proportion="0.2042042" vertical-offset="0" max-vertical-offset="333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="18" selection-start="511" selection-end="511" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1343">
           <folding />
         </state>
       </provider>
@@ -1122,13 +1117,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks/crawler.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="4" selection-start="19" selection-end="667" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1734">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/prices/_price.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="53" selection-start="58" selection-end="58" vertical-scroll-proportion="0.05214724" vertical-offset="0" max-vertical-offset="326">
@@ -1143,13 +1131,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/products/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="17" selection-start="128" selection-end="128" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="306">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/products_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="5" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
@@ -1157,9 +1138,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/products/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="26" selection-start="79" selection-end="79" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="323">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="18" selection-start="511" selection-end="511" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1343">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/price.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="48" selection-start="172" selection-end="172" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/tasks/crawler.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="1" selection-start="434" selection-end="434" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1734">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/tasks/data.rake">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="3" selection-start="918" selection-end="918" vertical-scroll-proportion="1.0142045" vertical-offset="153" max-vertical-offset="612">
+        <state line="7" column="6" selection-start="148" selection-end="148" vertical-scroll-proportion="-0.09659091" vertical-offset="153" max-vertical-offset="629">
           <folding />
         </state>
       </provider>

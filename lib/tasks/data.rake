@@ -5,7 +5,7 @@ namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
 #zlacnene.sk
-    (1..56).each do |id|
+    (1..4).each do |id|
       #puts "Strana cislo #{id}"
       html = open("http://www.zlacnene.sk/tovar/hladaj/sk-potraviny/p/#{id}")
       doc = Nokogiri::HTML(html)
@@ -16,13 +16,14 @@ namespace :db do
         obchod = produkt.search('.prodejnaName').text
         #platnostDo = produkt.search('.platiDo').text
        # puts cena[1] +" "+obchod +" "+ platnostDo
+        temp = cena[1].sub(',','.').to_f
 
         item = Product.find_by(name: meno)
         if item.nil? then
           item = Product.create(name: meno)
-          item.prices.create!(price: cena, shop: obchod)
+          item.prices.create!(price: temp, shop: obchod)
         else
-          item.prices.create!(price: cena, shop: obchod)
+          item.prices.create!(price: temp, shop: obchod)
         end
 
       end
