@@ -1,6 +1,7 @@
 <%provide(:title, '| Produkty')%>
 <h1>Tu budú všetky produkty</h1>
 
+<%= will_paginate %>
 <ul class="products">
   <% @products.each do |product| %>
       <li>
@@ -9,3 +10,11 @@
       </li>
   <% end %>
 </ul>
+<%= will_paginate %>
+
+  <br>
+  <%=form_for(@product) do |p|%>
+      <%= p.text_field :name %>
+      <%= p.submit "Pridať produkt", class: "btn btn-success" %>
+  <% end %>
+
