@@ -5,7 +5,7 @@ namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
 #zlacnene.sk
-    (1..4).each do |id|
+    (1..56).each do |id|
       #puts "Strana cislo #{id}"
       html = open("http://www.zlacnene.sk/tovar/hladaj/sk-potraviny/p/#{id}")
       doc = Nokogiri::HTML(html)

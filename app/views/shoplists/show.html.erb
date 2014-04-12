@@ -3,9 +3,11 @@
 <h1><%= @shoplist.name %></h1>
 <div class="row">
   <div class="span8">
-    <!--<% if @shoplist.products.any? %>-->
-        <!--<%= render @products %>-->
-    <!--<% end %>-->
+    <% if @shoplist.products.any? %>
+        <%= @products.each do |p| %>
+            <%= link_to p.name, p %>
+        <%end%>
+    <% end %>
 
   </div>
 </div>

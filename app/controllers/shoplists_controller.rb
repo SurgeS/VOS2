@@ -4,6 +4,7 @@ class ShoplistsController < ApplicationController
   before_action :signed_in_user, only: [:create, :destroy]
   before_action :correct_user,   only: :destroy
 
+
   def new
     @shoplist = current_user.shoplists.build if signed_in?
   end

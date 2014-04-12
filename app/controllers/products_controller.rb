@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @prices = @product.prices.paginate(page: params[:page])
+    #shoplist_add_product @product
   end
 
   def create
