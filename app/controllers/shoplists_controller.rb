@@ -18,7 +18,9 @@ class ShoplistsController < ApplicationController
     end
   end
 
-  def destroy
+  def show
+    @shoplist = Shoplist.find(params[:id])
+    @products = @shoplist.products.paginate(page: params[:page])
   end
 
   private

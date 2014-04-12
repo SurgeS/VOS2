@@ -3,4 +3,7 @@ class Product < ActiveRecord::Base
   validates :name, uniqueness: true
 
   has_many :prices, dependent: :destroy
+
+  has_many :item_in_lists
+  has_many :shoplists, through: :item_in_lists
 end
