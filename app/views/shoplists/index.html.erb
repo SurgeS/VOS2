@@ -5,9 +5,8 @@
 <p>Produkty si do nich môžete pridávať priamo zo zoznamu produktov</p>
 
  <%= render @shoplists %>
+<br>
+<%= link_to "Nový zoznam", 'shoplists/new', class: "btn btn-success"%>
 
 
-<div class="row">
-  <p> <%= render 'new_shoplist' %></p>
-</div>
 
