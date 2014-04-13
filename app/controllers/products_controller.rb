@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
   end
 
   def ins
-    @shoplist = Shoplist.first
+    @shoplist = current_user.shoplists.first
     @product = Product.find(params[:id])
     @shoplist.item_in_lists.create(product: @product)
 
