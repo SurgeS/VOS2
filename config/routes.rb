@@ -2,12 +2,20 @@ VOSShoppingList::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :products
+  resources :products do
+    member do
+      post :ins
+    end
+  end
+
   resources :shoplists
 
   root 'basic_pages#home'
 
 #
+
+
+
 
   match '/signup', to: 'users#new', via: 'get'
   match '/about', to: 'basic_pages#about', via: 'get'
@@ -18,6 +26,7 @@ VOSShoppingList::Application.routes.draw do
 
   match '/products', to: 'products#index', via: 'get'
   match '/shoplists', to: 'shoplists#index', via: 'get'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

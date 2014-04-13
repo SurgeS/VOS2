@@ -24,7 +24,7 @@ class ShoplistsController < ApplicationController
 
   def show
     @shoplist = Shoplist.find(params[:id])
-    @products = @shoplist.products.paginate(page: params[:page])
+    @products = @shoplist.products #.paginate(page: params[:page])
   end
 
   def destroy

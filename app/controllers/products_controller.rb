@@ -8,6 +8,14 @@ class ProductsController < ApplicationController
     self.new
   end
 
+  def ins
+    @shoplist = Shoplist.first
+    @product = Product.find(params[:id])
+    @shoplist.item_in_lists.create(product: @product)
+
+    redirect_to products_path
+  end
+
   def show
     @product = Product.find(params[:id])
     @prices = @product.prices.paginate(page: params[:page])

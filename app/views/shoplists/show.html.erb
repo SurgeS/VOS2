@@ -4,10 +4,7 @@
 <div class="row">
   <div class="span8">
     <% if @shoplist.products.any? %>
-        <%= @products.each do |p| %>
-            <%= link_to p.name, p %>
-        <%end%>
+        <%= render @products %>
     <% end %>
-
   </div>
 </div>

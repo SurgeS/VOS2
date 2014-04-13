@@ -1,4 +1,4 @@
 <li>
-  <%= link_to "+", '#', class: "btn btn-default" %>
+  <%= link_to "+", ins_product_path(product.id), method: :post, class: "btn btn-default" %>
   <%= link_to product.name, product %>
 </li>
