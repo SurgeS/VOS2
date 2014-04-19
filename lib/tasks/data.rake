@@ -2,8 +2,8 @@ require 'open-uri'
 require 'nokogiri'
 
 namespace :db do
-  desc "Fill database with sample data"
-  task populate: :environment do
+  desc "Fill database with data from zlacnene.sk"
+  task fillup: :environment do
 #zlacnene.sk
     (1..56).each do |id|
       #puts "Strana cislo #{id}"
@@ -23,9 +23,10 @@ namespace :db do
           item = Product.create(name: meno)
           item.prices.create!(price: temp, shop: obchod)
         else
-          item.prices.create!(price: temp, shop: obchod)
+          if item.prices.where("price = ? AND shop = ?", temp, obchod).nil?
+            item.prices.create!(price: temp, shop: obchod)
+          end
         end
-
       end
     end
   end
