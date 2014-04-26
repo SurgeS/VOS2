@@ -5,6 +5,7 @@ namespace :db do
   desc "Fill database with data from zlacnene.sk"
   task fillup: :environment do
 #zlacnene.sk
+    Price.destroy_all "until<current_date"
     (1..56).each do |id|
       #puts "Strana cislo #{id}"
       html = open("http://www.zlacnene.sk/tovar/hladaj/sk-potraviny/p/#{id}")
@@ -14,18 +15,19 @@ namespace :db do
         #puts meno
         cena = produkt.search('.cena').text.split(' ')
         obchod = produkt.search('.prodejnaName').text
-        #platnostDo = produkt.search('.platiDo').text
+        platnostDo = produkt.search('.platiDo').text
        # puts cena[1] +" "+obchod +" "+ platnostDo
         temp = cena[1].sub(',','.').to_f
+        item = Product.find_by_name(meno)
 
-        item = Product.find_by(name: meno)
         if item.nil? then
           item = Product.create(name: meno)
-          item.prices.create!(price: temp, shop: obchod)
+          item.prices.create!(price: temp, shop: obchod, until: platnostDo)
         else
-          if item.prices.where("price = ? AND shop = ?", temp, obchod).nil?
-            item.prices.create!(price: temp, shop: obchod)
-          end
+          item.prices.where(shop: obchod).destroy_all
+          #if item.prices.where("price = ? AND shop = ?", temp, obchod).nil?
+          item.prices.create!(price: temp, shop: obchod, until: platnostDo)
+          #end
         end
       end
     end

@@ -26,32 +26,60 @@ require 'nokogiri'
 #    end
 #end
 
-#itesco - este dorobit stranky priamo v jednotlivych kategoriach
-(3..512).each do |id|
-  id=id.to_s
-  dlzka = id.length
-  while (dlzka<8) do
-    id = "0"+id
-    dlzka +=1
-  end
-
-  puts "Strana cislo #{id}"
-  html = open("http://potravinydomov.itesco.sk/sk-SK/Product/BrowseProducts?taxonomyId=Cat#{id}")
-  doc = Nokogiri::HTML(html, 'UTF-8')
-  doc.search('.t.product').each do |produkt|
+#zlacnene.sk
+#Price.delete_all "person_id = 5 AND (category = 'Something' OR category = 'Else')"
+(1..56).each do |id|
+  #puts "Strana cislo #{id}"
+  html = open("http://www.zlacnene.sk/tovar/hladaj/sk-potraviny/p/#{id}")
+  doc = Nokogiri::HTML(html)
+  doc.search('.zboziVypis').each do |produkt|
     meno = produkt.search('h2 a').text
-    puts meno
+    #puts meno
+    cena = produkt.search('.cena').text.split(' ')
+    obchod = produkt.search('.prodejnaName').text
+    platnostDo = produkt.search('.platiDo').text
+    # puts cena[1] +" "+obchod +" "+ platnostDo
+    temp = cena[1].sub(',','.').to_f
 
-    cena = produkt.search('.price').text.split(' ')
-    gibber = produkt.search('h3').text
-    puts gibber
-    #obchod = "Tesco" #D'uh
-    platnostDo = produkt.search('.promoUntil').text
-    platnostDo.sub!(/.*?(?=\d)/im, "")
-    puts cena[0] +" "+ platnostDo[0..-3] #+" "+obchod  POZN: platnost netreba - denne update-y databazy
-    puts ""
+    puts cena[1] + " "+obchod +" "+ platnostDo
+    #item = Product.find_by(name: meno)
+    #if item.nil? then
+    #  item = Product.create(name: meno)
+    #  item.prices.create!(price: temp, shop: obchod)
+    #else
+    #  if item.prices.where("price = ? AND shop = ?", temp, obchod).nil?
+    #    item.prices.create!(price: temp, shop: obchod)
+    #  end
+    #end
   end
 end
+
+#itesco - este dorobit stranky priamo v jednotlivych kategoriach
+#(3..512).each do |id|
+#  id=id.to_s
+#  dlzka = id.length
+#  while (dlzka<8) do
+#    id = "0"+id
+#    dlzka +=1
+#  end
+#
+#  puts "Strana cislo #{id}"
+#  html = open("http://potravinydomov.itesco.sk/sk-SK/Product/BrowseProducts?taxonomyId=Cat#{id}")
+#  doc = Nokogiri::HTML(html, 'UTF-8')
+#  doc.search('.t.product').each do |produkt|
+#    meno = produkt.search('h2 a').text
+#    puts meno
+#
+#    cena = produkt.search('.price').text.split(' ')
+#    gibber = produkt.search('h3').text
+#    puts gibber
+#    #obchod = "Tesco" #D'uh
+#    platnostDo = produkt.search('.promoUntil').text
+#    platnostDo.sub!(/.*?(?=\d)/im, "")
+#    puts cena[0] +" "+ platnostDo[0..-3] #+" "+obchod  POZN: platnost netreba - denne update-y databazy
+#    puts ""
+#  end
+#end
 # subject.save
 #  end
 
