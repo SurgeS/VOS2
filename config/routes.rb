@@ -2,19 +2,19 @@ VOSShoppingList::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :prices
+
   resources :products do
     member do
       post :ins
     end
+    resources :prices
   end
 
   resources :shoplists
 
   root 'basic_pages#home'
-
 #
-
-
 
 
   match '/signup', to: 'users#new', via: 'get'

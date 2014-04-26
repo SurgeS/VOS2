@@ -7,12 +7,10 @@ namespace :db do
 #zlacnene.sk
     Price.destroy_all "until<current_date"
     (1..56).each do |id|
-      #puts "Strana cislo #{id}"
       html = open("http://www.zlacnene.sk/tovar/hladaj/sk-potraviny/p/#{id}")
       doc = Nokogiri::HTML(html)
       doc.search('.zboziVypis').each do |produkt|
         meno = produkt.search('h2 a').text
-        #puts meno
         cena = produkt.search('.cena').text.split(' ')
         obchod = produkt.search('.prodejnaName').text
         platnostDo = produkt.search('.platiDo').text
@@ -25,9 +23,7 @@ namespace :db do
           item.prices.create!(price: temp, shop: obchod, until: platnostDo)
         else
           item.prices.where(shop: obchod).destroy_all
-          #if item.prices.where("price = ? AND shop = ?", temp, obchod).nil?
           item.prices.create!(price: temp, shop: obchod, until: platnostDo)
-          #end
         end
       end
     end
