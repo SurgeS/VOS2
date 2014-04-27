@@ -1,4 +1,11 @@
-<li>
-  <%= link_to "+", ins_product_path(product.id), method: :post, class: "btn btn-default" %>
-  <%= link_to product.name, product %>
-</li>
+<!--<li>-->
+  <tr>
+    <td><%= link_to "+", ins_product_path(product.id), method: :post, class: "btn btn-default" %></td>
+    <td><%= link_to product.name, product %></td>
+    <% product.prices.each do |price|  %>
+      <td><%= price.price %></td>
+      <td><%= price.shop %></td>
+    <% end %>
+  </tr>
+
+<!--</li>-->
