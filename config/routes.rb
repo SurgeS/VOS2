@@ -5,17 +5,20 @@ VOSShoppingList::Application.routes.draw do
   resources :prices
 
   resources :shoplists do
-    resources :products
-  end
-
-  #resources :shoplists do
     resources :products do
       member do
         post :ins
       end
       resources :prices
     end
-  #end
+  end
+
+  resources :products do
+    member do
+      post :ins
+    end
+    resources :prices
+  end
 
 
 

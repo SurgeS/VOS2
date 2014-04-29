@@ -16,7 +16,7 @@ class ShoplistsController < ApplicationController
   def create
     @shoplist = current_user.shoplists.build(shoplist_params)
     if @shoplist.save
-      redirect_to products_path
+      redirect_to shoplist_products_path(@shoplist.id)
     else
       redirect_to shoplist_params
     end

@@ -6,7 +6,15 @@
     <% if @shoplist.products.any? %>
 
         <table>
-          <%= render @products %>
+          <% @products.each do |product| %>
+              <tr>
+                <td><%= link_to product.name, product %></td>
+                <% product.prices.each do |price|  %>
+                    <td><%= price.price %></td>
+                    <td><%= price.shop %></td>
+                <% end %>
+              </tr>
+          <%end%>
         </table>
 
     <% end %>

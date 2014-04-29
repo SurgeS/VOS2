@@ -7,7 +7,7 @@
 
 <!--<ul class="products">-->
 <table>
-  <%= render @products %>
+  <%= render partial: "product", collection: @products, locals: { shoplist: @shoplist }%>
 </table>
 <!--</ul>-->
 
