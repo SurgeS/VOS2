@@ -5,11 +5,12 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.paginate(page: params[:page], :per_page => 25).order('name ASC')
+    #@shoplist = Shoplist.find(params[:id])
     self.new
   end
 
   def ins
-    @shoplist = current_user.shoplists.first
+    @shoplist = current_user.shoplists.first #find(params[:id])
     @product = Product.find(params[:id])
     @shoplist.item_in_lists.create(product: @product)
 

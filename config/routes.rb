@@ -4,14 +4,18 @@ VOSShoppingList::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :prices
 
-  resources :products do
-    member do
-      post :ins
-    end
-    resources :prices
-  end
-
   resources :shoplists
+
+  #resources :shoplists do
+    resources :products do
+      member do
+        post :ins
+      end
+      resources :prices
+    end
+  #end
+
+
 
   root 'basic_pages#home'
 #
