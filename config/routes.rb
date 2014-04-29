@@ -4,7 +4,9 @@ VOSShoppingList::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :prices
 
-  resources :shoplists
+  resources :shoplists do
+    resources :products
+  end
 
   #resources :shoplists do
     resources :products do
