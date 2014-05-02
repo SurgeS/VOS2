@@ -18,7 +18,7 @@ class ShoplistsController < ApplicationController
     if @shoplist.save
       redirect_to shoplist_products_path(@shoplist.id)
     else
-      redirect_to shoplist_params
+      render 'new'
     end
   end
 

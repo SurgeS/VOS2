@@ -3,7 +3,9 @@
 
   <div class="span8">
     <% if @product.prices.any? %>
-        <h3>Ceny (<%= @product.prices.count %>)</h3>
+        <h3><%= link_to :back do %>
+              <%= image_tag "sipkaSpat.png", alt: "Späť" %>
+              <% end %>Ceny (<%= @product.prices.count %>)</h3>
           <%= render @prices %>
     <% end %>
 
