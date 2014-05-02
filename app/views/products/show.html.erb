@@ -3,13 +3,13 @@
 
   <div class="span8">
     <% if @product.prices.any? %>
-        <h3><%= link_to :back do %>
-              <%= image_tag "sipkaSpat.png", alt: "Späť" %>
-              <% end %>Ceny (<%= @product.prices.count %>)</h3>
+        <h3>Ceny (<%= @product.prices.count %>)</h3>
           <%= render @prices %>
     <% end %>
 
-    <h4>Pridať novú cenu</h4>
+    <h4><%= link_to :back do %>
+          <%= image_tag "sipkaSpat.png", alt: "Späť" %>
+      <% end %>Pridať novú cenu</h4>
     <%= form_for [@product, Price.new] do |f| %>
         <div class='form-group'>
           <%= f.label :price, 'Cena' %>

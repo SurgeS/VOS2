@@ -4,7 +4,15 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.paginate(page: params[:page], :per_page => 25).order('name ASC')
+    if params[:search].present?
+      search = Product.search do
+        fulltext params[:search]
+      end
+      @products = search.results
+    else
+      @products = Product.paginate(page: params[:page], :per_page => 25).order('name ASC')
+    end
+
     @shoplist = Shoplist.find(params[:shoplist_id])
     self.new
   end
@@ -15,7 +23,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @shoplist.item_in_lists.create(product: @product)
 
-    redirect_to shoplist_products_path
+    redirect_to :back
   end
 
   def show
@@ -27,7 +35,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to products_path
+      redirect_to :back
     else
       render 'new'
     end

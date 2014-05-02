@@ -1,12 +1,8 @@
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
-
-# Use postgresql as the database for Active Record
 gem 'pg'
 
-#STYLING
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '2.3.2.0'
@@ -34,7 +30,10 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
+  gem 'sunspot_solr'
 end
+
+gem 'sunspot_rails'
 
 group :test do
   gem 'selenium-webdriver', '2.35.1'
@@ -44,6 +43,8 @@ end
 
 #to hash the password
 gem 'bcrypt-ruby', '3.1.2'
+
+
 
 # Use unicorn as the app server
 # gem 'unicorn'

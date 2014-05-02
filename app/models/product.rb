@@ -6,4 +6,9 @@ class Product < ActiveRecord::Base
 
   has_many :item_in_lists
   has_many :shoplists, through: :item_in_lists
+
+  searchable do
+    text :name
+    text :category
+  end
 end
