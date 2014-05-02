@@ -44,7 +44,7 @@ end
 #to hash the password
 gem 'bcrypt-ruby', '3.1.2'
 
-
+gem 'progress_bar'
 
 # Use unicorn as the app server
 # gem 'unicorn'
