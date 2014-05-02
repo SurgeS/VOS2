@@ -21,3 +21,5 @@ doc/
 .idea
 .secret
 .idea/workspace.xml
+
+/solr/default/data
