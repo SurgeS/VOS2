@@ -40,16 +40,21 @@ class ShoplistsController < ApplicationController
 
       (0..4).each do |index|        #prejdi vsetky shopy
         done = false
-        avg = 0
+        sum = 0
         prices.each do |price|      #prejdi vsetky ceny a najdi taku s akt. shopom
-          avg += price.price
+          sum += price.price
           if(price.shop.to_s == shops[index])
             done = true
             ordPrices[price.shop] = price.price#daj do OrderedHash
           end
         end
         if(!done)
-          ordPrices[shops[index]] = "NaN"
+          if(prices.length==0)
+            ordPrices[shops[index]] = "-"
+          else
+            cena = sum/prices.length #ak nie je v db, daj tam avg vsetkych
+            ordPrices[shops[index]] = sprintf('%.2f', cena)
+          end
         end
       end
       @ordProducts[product.name] = ordPrices
