@@ -6,21 +6,27 @@
     <% if @shoplist.products.any? %>
 
         <table>
+          <tr>
+            <th><b>Názov produktu</b></th>
+            <th><b>Billa</b></th>
+            <th><b>Carrefour</b></th>
+            <th><b>Kaufland</b></th>
+            <th><b>Lidl</b></th>
+            <th><b>Tesco</b></th>
+          </tr>
           <% @products.each do |product| %>
               <tr>
                 <td><%= link_to product.name, product %></td>
-                <% product.prices.each do |price|  %>
-                    <td><%= price.price %></td>
-                    <td><%= price.shop %></td>
+                <% product.prices.each do |tprice|  %>
+                    <td><%= tprice.price %> <%= tprice.shop %></td>
                 <% end %>
               </tr>
           <%end%>
         </table>
 
     <% end %>
-
-
   </div>
 </div>
+
 <br>
 <%= link_to "Pridať produkty", shoplist_products_path(@shoplist.id), class: "btn btn-success"%>
