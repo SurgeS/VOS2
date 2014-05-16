@@ -14,12 +14,12 @@
             <th><b>Lidl</b></th>
             <th><b>Tesco</b></th>
           </tr>
-          <% @products.each do |product| %>
+          <% @ordProducts.each do |product,prices| %>
               <tr>
-                <td><%= link_to product.name, product %></td>
-                <% product.prices.each do |tprice|  %>
-                    <td><%= tprice.price %> <%= tprice.shop %></td>
-                <% end %>
+                <td><%= product %></td>
+              <% prices.each do |shop,price| %>
+                    <td><%= price %></td>
+              <% end %>
               </tr>
           <%end%>
         </table>

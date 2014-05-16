@@ -24,26 +24,35 @@ class ShoplistsController < ApplicationController
 
   def show
     @shoplist = Shoplist.find(params[:id])
-    products = @shoplist.products #.paginate(page: params[:page])
-    @shops = ["Billa", "Carrefour", "Kaufland", "Lidl", "Tesco"]
-  #map it shops na ceny + vyratat average
-    #vo view uz len preiterovat
+    @products = @shoplist.products
 
+
+    products = @shoplist.products #.paginate(page: params[:page])
+    shops = ["Billa", "Carrefour", "Kaufland", "Lidl", "Tesco"]
+#map it shops na ceny + vyratat average
+#vo view uz len preiterovat
+
+    @ordProducts = Hash.new
     products.each do |product|      #pre kazdy produkt
       prices = product.prices       #get jeho zname ceny
+
       ordPrices = ActiveSupport::OrderedHash.new   #vytvor ciast. objekt na vopchatie usortenych cien/shop
 
       (0..4).each do |index|        #prejdi vsetky shopy
         done = false
+        avg = 0
         prices.each do |price|      #prejdi vsetky ceny a najdi taku s akt. shopom
-          avg += price
-          if(price.shop.to_s == @shops[index])
+          avg += price.price
+          if(price.shop.to_s == shops[index])
             done = true
             ordPrices[price.shop] = price.price#daj do OrderedHash
           end
         end
+        if(!done)
+          ordPrices[shops[index]] = "NaN"
+        end
       end
-
+      @ordProducts[product.name] = ordPrices
     end
   end
 
