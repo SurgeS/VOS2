@@ -5,12 +5,12 @@ class ProductsController < ApplicationController
 
   def index
     if params[:search].present?
-      search = Product.search do
+      search = Product.search(include: :prices) do
         fulltext params[:search]
       end
       @products = search.results
     else
-      @products = Product.paginate(page: params[:page], :per_page => 25).order('name ASC')
+      @products = Product.paginate(page: params[:page], :per_page => 25).order('name ASC').includes(:prices)
     end
 
     @shoplist = Shoplist.find(params[:shoplist_id])
@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
   end
 
   def ins
-    #@shoplist = current_user.shoplists.first #
+
     @shoplist = current_user.shoplists.find(params[:shoplist_id])
     @product = Product.find(params[:id])
     @shoplist.item_in_lists.create(product: @product)

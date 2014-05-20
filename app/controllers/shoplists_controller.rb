@@ -26,8 +26,7 @@ class ShoplistsController < ApplicationController
     @shoplist = Shoplist.find(params[:id])
     @products = @shoplist.products
 
-
-    products = @shoplist.products #.paginate(page: params[:page])
+    products = @shoplist.products.includes(:prices)#.paginate(page: params[:page])
     shops = ["Billa", "Carrefour", "Kaufland", "Lidl", "Tesco"]
 #map it shops na ceny + vyratat average
 #vo view uz len preiterovat
@@ -43,7 +42,7 @@ class ShoplistsController < ApplicationController
         sum = 0
         prices.each do |price|      #prejdi vsetky ceny a najdi taku s akt. shopom
           sum += price.price
-          if(price.shop.to_s == shops[index])
+          if(price.shop == shops[index])
             done = true
             ordPrices[price.shop] = price.price#daj do OrderedHash
           end
