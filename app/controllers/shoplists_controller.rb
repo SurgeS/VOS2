@@ -24,7 +24,6 @@ class ShoplistsController < ApplicationController
 
   def show
     @shoplist = Shoplist.find(params[:id])
-    @products = @shoplist.products
 
     products = @shoplist.products.includes(:prices)#.paginate(page: params[:page])
     shops = ["Billa", "Carrefour", "Kaufland", "Lidl", "Tesco"]
