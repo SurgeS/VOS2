@@ -1,11 +1,13 @@
 <% provide(:title, "| "+@shoplist.name) %>
 
+<%= javascript_include_tag "computeSum.js" %>
+
 <h1><%= @shoplist.name %></h1>
 <div class="row">
   <div class="span8">
     <% if @shoplist.products.any? %>
 
-        <table>
+        <table id="ceny">
           <tr>
             <th><b>Názov produktu</b></th>
             <th><b>Billa</b></th>
