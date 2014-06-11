@@ -9,6 +9,7 @@ namespace :db do
     (1..56).each do |id|
       html = open("http://www.zlacnene.sk/tovar/hladaj/sk-potraviny/p/#{id}")
       doc = Nokogiri::HTML(html)
+
       doc.search('.zboziVypis').each do |produkt|
         meno = produkt.search('h2 a').text
         cena = produkt.search('.cena').text.split(' ')
