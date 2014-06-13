@@ -5,7 +5,7 @@
         <%= link_to "ShopList", shoplists_path, id: "logo" %>
         <nav>
           <ul class="nav pull-left">
-            <li><%= link_to "Produkty", shoplist_products_path(current_user.shoplists.first.id) %></li>
+            <%-# TODO produkty bez shoplistu-%>
             <li><%= link_to "Zoznamy", shoplists_path %></li>
           </ul>
         </nav>
@@ -16,7 +16,6 @@
       <nav>
         <ul class="nav pull-right">
           <% if signed_in? %>
-            <li><%= link_to "Domov", shoplist_products_path(current_user.shoplists.first.id) %></li>
             <li><%= link_to "Odhlásiť sa", signout_path, method: "delete" %></li>
           <% else %>
             <li><%= link_to "Domov", root_path %></li>
