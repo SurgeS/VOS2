@@ -1,6 +1,8 @@
 <%provide(:title, '| Zoznam produktov')%>
 <h1>Zoznam produktov</h1>
 
+<%# <a href="link" onClick="">nieco</a> %>
+
 <div >
   <%= form_tag products_path, method: :get do %>
       <%= render 'searchbox'%>

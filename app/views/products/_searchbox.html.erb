@@ -1,4 +1,8 @@
 <div class="pull-right">
-  <%= text_field_tag :search, params[:search], placeholder: 'Hľadať konkrétny produkt', type: :search %>
-  <%= submit_tag 'Hľadať', class: 'btn btn-default' %>
+  <div class="input-group">
+    <%= text_field_tag :search, params[:search], placeholder: 'Hľadať konkrétny produkt', type: :search %>
+      <span class="input-group-btn">
+          <%= submit_tag 'Hľadať', class: 'btn btn-default' %>
+      </span>
+  </div>
 </div>
