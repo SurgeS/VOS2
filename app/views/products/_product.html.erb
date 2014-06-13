@@ -2,7 +2,7 @@
   <td><%= link_to "+", ins_shoplist_product_path(shoplist.id, product.id), method: :post, class: "btn btn-default" %></td>
   <td><%= link_to product.name, product %></td>
   <% product.prices.each do |price|  %>
-      <td><%= price.price %></td>
-      <td><%= price.shop %></td>
+    <td><%= price.price %></td>
+    <td><%= price.shop %></td>
   <% end %>
 </tr>

@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
-  def index
+  def listing
     if params[:search].present?
       search = Product.search(include: :prices) do
         fulltext params[:search]
@@ -12,13 +12,15 @@ class ProductsController < ApplicationController
     else
       @products = Product.paginate(page: params[:page], :per_page => 25).order('name ASC').includes(:prices)
     end
-
-    @shoplist = Shoplist.find(params[:shoplist_id])
     self.new
   end
 
-  def ins
+  def index #vypis vsetkych + pridavanie do shoplistov
+    self.listing
+    @shoplist = Shoplist.find(params[:shoplist_id])
+  end
 
+  def ins
     @shoplist = current_user.shoplists.find(params[:shoplist_id])
     @product = Product.find(params[:id])
     @shoplist.item_in_lists.create(product: @product)
@@ -29,7 +31,6 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @prices = @product.prices.paginate(page: params[:page])
-    #shoplist_add_product @product
   end
 
   def create

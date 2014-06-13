@@ -19,7 +19,7 @@ VOSShoppingList::Application.routes.draw do
 
   root 'basic_pages#home'
 #
-  match '/products', to: 'products#vypis', via: 'get'
+  match '/products', to: 'products#listing', via: 'get'
 
   match '/signup', to: 'users#new', via: 'get'
   match '/about', to: 'basic_pages#about', via: 'get'
