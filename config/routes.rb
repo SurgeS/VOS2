@@ -13,18 +13,13 @@ VOSShoppingList::Application.routes.draw do
     end
   end
 
-  resources :products do
-    member do
-      post :ins
-    end
+  resources :products, except: :index do
     resources :prices
   end
 
-
-
   root 'basic_pages#home'
 #
-
+  match '/products', to: 'products#vypis', via: 'get'
 
   match '/signup', to: 'users#new', via: 'get'
   match '/about', to: 'basic_pages#about', via: 'get'
@@ -33,7 +28,6 @@ VOSShoppingList::Application.routes.draw do
   match '/signin', to: 'sessions#new', via:'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
 
-  match '/products', to: 'products#index', via: 'get'
   match '/shoplists', to: 'shoplists#index', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
