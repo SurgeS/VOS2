@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     var shopy = new Array(6);
     for (var i = shopy.length - 1; i >= 0; --i) shopy[i] = 0;
-    shopy[0] = "Celková suma: ";
+    shopy[0] = "Celková suma (€): ";
     table.find('tr').each(function (i) {
         var $tds = $(this).find('td');
         for (var j = 1; j < 6; j++) {

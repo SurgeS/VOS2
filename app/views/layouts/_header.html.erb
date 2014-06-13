@@ -3,15 +3,16 @@
     <div class="container">
       <% if signed_in? %>
         <%= link_to "ShopList", shoplists_path, id: "logo" %>
+        <nav>
+          <ul class="nav pull-left">
+            <li><%= link_to "Produkty", shoplist_products_path(current_user.shoplists.first.id) %></li>
+            <li><%= link_to "Zoznamy", shoplists_path %></li>
+          </ul>
+        </nav>
       <% else %>
         <%= link_to "ShopList", root_path, id: "logo" %>
       <%end%>
-      <nav>
-        <ul class="nav pull-left">
-          <li><%= link_to "Produkty", shoplist_products_path(current_user.shoplists.first.id) %></li>
-          <li><%= link_to "Zoznamy", shoplists_path %></li>
-        </ul>
-      </nav>
+
       <nav>
         <ul class="nav pull-right">
           <% if signed_in? %>

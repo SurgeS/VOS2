@@ -10,7 +10,6 @@ gem 'bootstrap-sass', '2.3.2.0'
 gem 'sprockets', '2.11.0'
 
 gem 'will_paginate', '3.0.4'
-#gem 'will_paginate-bootstrap'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem 'sidekiq'
 
@@ -35,8 +34,6 @@ group :development, :test do
   gem 'sunspot_solr'
 end
 
-gem 'sunspot_rails'
-
 group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
@@ -51,7 +48,7 @@ end
 gem 'bcrypt-ruby', '3.1.2'
 
 gem 'progress_bar'
-
+gem 'sunspot_rails'
 # Use unicorn as the app server
 # gem 'unicorn'
 
