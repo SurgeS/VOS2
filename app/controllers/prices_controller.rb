@@ -18,8 +18,8 @@ class PricesController < ApplicationController
     if @price.save
       redirect_to @product
     else
-      @price.update_attribute(:price, 42)
       redirect_to @product
+      #TODO add error messages
     end
   end
 
