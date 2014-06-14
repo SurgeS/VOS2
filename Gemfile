@@ -6,7 +6,7 @@ gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 3.2'
-gem 'bootstrap-sass', '~> 3.1.1'
+gem 'bootstrap-sass', '2.3.2.0'
 gem 'sprockets', '2.11.0'
 
 gem 'will_paginate', '3.0.4'
@@ -31,7 +31,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
-  gem 'sunspot_solr'
+
 end
 
 group :test do
@@ -48,6 +48,7 @@ end
 gem 'bcrypt-ruby', '3.1.2'
 
 gem 'progress_bar'
+gem 'sunspot_solr'
 gem 'sunspot_rails'
 # Use unicorn as the app server
 # gem 'unicorn'
