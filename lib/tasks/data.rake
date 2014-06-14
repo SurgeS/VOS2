@@ -15,7 +15,6 @@ namespace :db do
         cena = produkt.search('.cena').text.split(' ')
         obchod = produkt.search('.prodejnaName').text
         platnostDo = produkt.search('.platiDo').text
-       # puts cena[1] +" "+obchod +" "+ platnostDo
         temp = cena[1].sub(',','.').to_f
         item = Product.find_by_name(meno)
 
