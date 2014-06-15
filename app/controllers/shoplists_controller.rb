@@ -26,6 +26,11 @@ class ShoplistsController < ApplicationController
     @shoplist = Shoplist.find(params[:id])
     products = @shoplist.products.includes(:prices)#.paginate(page: params[:page])
 
+    @quantity = Hash.new
+    @shoplist.item_in_lists.each do |link|
+      @quantity[link.product_id] = link.quantity
+    end
+
     @ordProducts = @shoplist.make_order products
   end
 

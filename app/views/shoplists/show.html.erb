@@ -6,22 +6,22 @@
 <div class="row">
   <div class="span8">
     <% if @shoplist.products.any? %>
-
         <table id="ceny">
           <tr>
-            <th>Počet kusov</th>
-            <th><b>Názov produktu</b></th>
-            <th><b>Billa</b></th>
-            <th><b>Carrefour</b></th>
-            <th><b>Kaufland</b></th>
-            <th><b>Lidl</b></th>
-            <th><b>Tesco</b></th>
+            <th>Počet</th>
+            <th>Názov produktu</th>
+            <th>Billa</th>
+            <th>Carrefour</th>
+            <th>Kaufland</th>
+            <th>Lidl</th>
+            <th>Tesco</th>
           </tr>
           <% @ordProducts.each do |product,prices| %>
               <tr>
-                <td><%= product %></td>
+                <td><%= @quantity[product.id]%></td>
+                <td><%= link_to product.name, product %></td>
               <% prices.each do |shop,price| %>
-                    <td><%= price %></td>
+                    <td><%= format_price @quantity[product.id], price  %></td>
               <% end %>
               </tr>
           <%end%>

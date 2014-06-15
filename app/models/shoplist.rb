@@ -10,9 +10,9 @@ class Shoplist < ActiveRecord::Base
 #map it shops na ceny + vyratat average
 #vo view uz len preiterovat
 
-    ordProducts = Hash.new
+    ordProducts = ActiveSupport::OrderedHash.new
 
-    products.each do |product|      #pre kazdy produkt
+    products.each_with_index do |product,index|      #pre kazdy produkt
       prices = product.prices       #get jeho zname ceny
 
       ordPrices = ActiveSupport::OrderedHash.new   #vytvor ciast. objekt na vopchatie usortenych cien/shop
@@ -36,7 +36,7 @@ class Shoplist < ActiveRecord::Base
           end
         end
       end
-      ordProducts[product.name] = ordPrices
+      ordProducts[product] = ordPrices
     end
     ordProducts
   end
