@@ -22,9 +22,8 @@ class ProductsController < ApplicationController
 
   def ins
     @shoplist = current_user.shoplists.find(params[:shoplist_id])
-    @product = Product.find(params[:id])
-    @shoplist.item_in_lists.create(product: @product)
 
+    @shoplist.item_in_lists.create(product_id: params[:id], quantity: params[:pocet])
     redirect_to :back
   end
 
