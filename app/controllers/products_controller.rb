@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
     @search = Product.search(include: :prices) do
       fulltext params[:search]
       facet :category
+      with :category, params[:category] if params[:category].present?
       paginate(page: params[:page], per_page: 25)
     end
     @products = @search.results

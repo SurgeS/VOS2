@@ -10,23 +10,7 @@
 </div>
 <br>
 
-<div id="facets">
-  <h3>Kategórie</h3>
-  <% unless params[:category].blank? %>
-    (<%= link_to 'späť', category: nil %>)
-  <%end%>
-  <ul>
-    <% @search.facet(:category).rows.each do |row| %>
-        <li>
-          <% if params[:category].blank? %>
-            <%= link_to row.value, category: row.value %> (<%= row.count %>)
-          <% else %>
-            <strong><%= row.value %></strong>
-          <% end %>
-        </li>
-    <% end %>
-  </ul>
-</div>
+<%= render 'facets'%>
 
 
 <div><%= will_paginate %></div>

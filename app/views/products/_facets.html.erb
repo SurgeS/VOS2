@@ -1,0 +1,14 @@
+<div id="facets">
+  <h3>Kategórie</h3>
+  <ul>
+    <% @search.facet(:category).rows.each do |row| %>
+        <li>
+          <% if params[:category].blank? %>
+              <%= link_to row.value, category: row.value %> (<%= row.count %>)
+          <% else %>
+              <%= row.value %>(<%= link_to 'späť', :back  %>)
+          <% end %>
+        </li>
+    <% end %>
+  </ul>
+</div>
