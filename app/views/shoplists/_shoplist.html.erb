@@ -1,6 +1,6 @@
 <li>
 
-  <%= link_to "X", shoplist, class: "btn btn-danger", method: :delete, data: { confirm: "Určite chcete zmazať zvolený nákupný zoznam?" },
+  <%= link_to "X", shoplists_path, class: "btn btn-danger", method: :delete, data: { confirm: "Určite chcete zmazať zvolený nákupný zoznam?" },
               title: shoplist.name %>
   <%= link_to shoplist.name, shoplist%>
 </li>

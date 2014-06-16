@@ -19,6 +19,7 @@ $(document).ready(function () {
     var prices = document.getElementById("ceny");
     var cells = new Array(7);
     var sumRow = prices.insertRow(-1);
+    sumRow.className = 'well';
     for (var j = 0; j < 7; j++) {
         cells[j] = sumRow.insertCell(j);
         if(j==0) cells[j].innerHTML = shopy[j] + " ks";

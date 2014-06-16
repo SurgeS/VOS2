@@ -4,14 +4,11 @@ class ProductsController < ApplicationController
   end
 
   def listing
-    if params[:search].present?
-      search = Product.search(include: :prices) do
-        fulltext params[:search]
-      end
-      @products = search.results
-    else
-      @products = Product.paginate(page: params[:page], :per_page => 25).order('name ASC').includes(:prices)
+    @search = Product.search(include: :prices) do
+      fulltext params[:search]
+      facet :category
     end
+    @products = @search.results
     self.new
   end
 
