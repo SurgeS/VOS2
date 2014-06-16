@@ -8,16 +8,16 @@
       <%= render 'searchbox'%>
   <% end %>
 </div>
-<br>
+</br>
 
 <%= render 'facets'%>
-
+</br>
 
 <div><%= will_paginate %></div>
 
 <div>
   <table>
-    <tr>
+    <tr class="well">
       <th></th>
       <th>Názov produktu</th>
     </tr>
@@ -28,7 +28,7 @@
 <%= will_paginate %>
 
   <br>
-<div><h5 class="pull-right">Vybraný zoznam: <%= link_to @shoplist.name, shoplists_path, class: "btn btn-default"%></h5></div>
+<div><h5 class="pull-right">Vybraný zoznam: <%= link_to @shoplist.name, shoplists_path, class: 'btn btn-default'%></h5></div>
 
 
 <%= render 'new_product' %>
