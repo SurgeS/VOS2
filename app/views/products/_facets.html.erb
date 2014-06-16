@@ -4,7 +4,7 @@
     <% @search.facet(:category).rows.each do |row| %>
         <li>
           <% if params[:category].blank? %>
-              <%= link_to row.value, category: row.value %> (<%= row.count %>)
+              <%= link_to row.value, params.merge({ category: row.value }) %> (<%= row.count %>)
           <% else %>
               <%= row.value %>(<%= link_to 'späť', :back  %>)
           <% end %>
