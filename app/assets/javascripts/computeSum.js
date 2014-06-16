@@ -25,7 +25,35 @@ $(document).ready(function () {
         if(j==0) cells[j].innerHTML = shopy[j] + " ks";
         else if(j==1) cells[j].innerHTML = shopy[j];
         else cells[j].innerHTML = shopy[j].toFixed(2);
-        
+
         cells[j].style.fontWeight = 'bold';
     }
+
+    var min=9999999;
+    var max=0;
+    var minID, maxID;
+    for (var j = 2; j < 7; j++) {
+        if (shopy[j]>max){
+            max = shopy[j];
+            maxID = j;
+        }
+        else if(shopy[j] == max){
+            maxID=null;
+            break;
+        }
+    }
+    for (var j = 2; j < 7; j++) {
+        if (shopy[j] < min){
+            min = shopy[j];
+            minID = j;
+        }
+        else if(shopy[j] == min){
+            minID=null;
+            break;
+        }
+    }
+    if(minID != null)
+        cells[minID].style.backgroundColor = 'green';
+    if(maxID != null)
+        cells[maxID].style.backgroundColor = 'red';
 });
