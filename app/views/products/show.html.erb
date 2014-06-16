@@ -1,10 +1,14 @@
 <% provide(:title, "| "+@product.name) %>
 <div class="row">
 
+  <h1><%= @product.name%></h1>
+  <% if @product.category%>
+    <h2>Kategória: <%= @product.category %></h2>
+  <%end%>
   <div class="span8">
     <% if @product.prices.any? %>
         <h3>Ceny (<%= @product.prices.count %>)</h3>
-          <%= render @prices %>
+         <%= render @prices %>
     <% end %>
 
 

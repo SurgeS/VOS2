@@ -4,9 +4,11 @@ class ProductsController < ApplicationController
   end
 
   def listing
+    #TODO fix facets for nil category and current search
     @search = Product.search(include: :prices) do
       fulltext params[:search]
       facet :category
+      paginate(page: params[:page], per_page: 25)
     end
     @products = @search.results
     self.new

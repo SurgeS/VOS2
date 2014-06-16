@@ -10,21 +10,24 @@
 </div>
 <br>
 
-
 <div id="facets">
   <h3>Kategórie</h3>
+  <% unless params[:category].blank? %>
+    (<%= link_to 'späť', category: nil %>)
+  <%end%>
   <ul>
-    <% for row in @search.facet(:category).rows %>
+    <% @search.facet(:category).rows.each do |row| %>
         <li>
           <% if params[:category].blank? %>
-              <%= link_to row.value, category: row.value %> (<%= row.count %>)
+            <%= link_to row.value, category: row.value %> (<%= row.count %>)
           <% else %>
-              <strong><%= row.value %></strong> (<%= link_to "remove", category: nil %>)
+            <strong><%= row.value %></strong>
           <% end %>
         </li>
     <% end %>
   </ul>
 </div>
+
 
 <div><%= will_paginate %></div>
 
