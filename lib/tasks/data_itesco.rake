@@ -5,13 +5,13 @@ require 'nokogiri'
 #na doplnenie potrebneho poctu nul do adresy kvoli formatu tesco URLky
 def format_category id
   dlzka=id.length
-  id = "0"*(8-dlzka)+id
+  id = '0'*(8-dlzka)+id
 end
 
 namespace :db do
   desc 'Fill database with data from itesco.sk'
   task itesco: :environment do
-    (43..512).each do |id| #kategorie
+    (911..923).each do |id| #kategorie
       id = format_category id.to_s #
 
 

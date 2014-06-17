@@ -29,7 +29,7 @@
           <%= row.value%>
         <%end%>
       <% else %>
-        <%= link_to :back , class: 'btn btn-default' do %>
+        <%= link_to  params.except(:category, :page), class: 'btn btn-default' do %>
           <%= image_tag 'sipkaSpat.png', alt: 'Späť' %>
           <%= row.value%>
         <% end %>

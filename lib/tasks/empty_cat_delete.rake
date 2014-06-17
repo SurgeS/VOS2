@@ -1,6 +1,15 @@
+# encoding: utf-8
+#custom rake for some db manipulations
 namespace :db do
-  desc 'Delete products with empty string category'
-  task delete_empty: :environment do
-    Product.destroy_all(category: '')
+  desc 'Update database'
+  task custom_dbchange: :environment do
+    Product.update_all( "category = 'Cestoviny a ryža'", "category LIKE 'Cestoviny, ryža%'" )
+
+
+
+
+
+
+
   end
 end
