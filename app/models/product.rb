@@ -8,7 +8,7 @@ class Product < ActiveRecord::Base
   has_many :shoplists, through: :item_in_lists
 
   searchable do
-    text :name, :category
+    text :name
     string :category
     string :name
   end
