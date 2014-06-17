@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
       facet :category, sort: :index
       order_by :name, :asc
       with :category, params[:category] if params[:category].present?
-      paginate(page: params[:page], per_page: 25)
+      paginate(page: params[:page], per_page: 35)
     end
     @products = @search.results
     self.new
