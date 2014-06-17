@@ -10,5 +10,6 @@ class Product < ActiveRecord::Base
   searchable do
     text :name, :category
     string :category
+    string :name
   end
 end
