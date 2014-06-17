@@ -5,7 +5,7 @@ namespace :db do
   desc "Fill database with data from zlacnene.sk"
   task fillup: :environment do
 #zlacnene.sk
-    Price.destroy_all "until<current_date"
+    Price.destroy_all 'until<current_date'
     (1..56).each do |id|
       html = open("http://www.zlacnene.sk/tovar/hladaj/sk-potraviny/p/#{id}")
       doc = Nokogiri::HTML(html)

@@ -8,34 +8,43 @@ def format_category id
   id = "0"*(8-dlzka)+id
 end
 
-(4..512).each do |id| #kategorie
+(43..45).each do |id| #kategorie
   id = format_category id.to_s #
 
-  puts "Kategoria: #{id}"
+
   html = open("http://potravinydomov.itesco.sk/sk-SK/Product/BrowseProducts?taxonomyId=Cat#{id}")
   doc = Nokogiri::HTML(html, nil, 'UTF-8')
-  posledna = doc.search('.pagination').search('li').last.text.gsub(/Strana:(?<foo>\d)z\d/, '\k<foo>').to_i
+  error = doc.xpath('//*[@id="errorPage"]/div').text
+  unless (error != '')
+    posledna = doc.search('.pagination').search('li').last.text.gsub(/Strana:(?<foo>\d)z\d/, '\k<foo>').to_i
+    kategoria = doc.xpath('//*[@id="filterResults"]/h1').text.gsub(/\r/, '')
 
-  page=1
+    puts "Kategoria: #{kategoria} (#{id})"
+    puts "true" if (kategoria == '')
+    page=1
 
-  while (page <= posledna) do #pagination v konkretnej kategorii
-    puts "Strana: #{page}"
-    html2= open("http://potravinydomov.itesco.sk/sk-SK/Product/BrowseProducts?taxonomyID=Cat#{id}&pageNo=#{page}")
-    doc2 = Nokogiri::HTML(html2, nil, 'UTF-8')
+    while (page <= posledna) do #pagination v konkretnej kategorii
+      puts "Strana: #{page}"
+      html2= open("http://potravinydomov.itesco.sk/sk-SK/Product/BrowseProducts?taxonomyID=Cat#{id}&pageNo=#{page}")
+      doc2 = Nokogiri::HTML(html2, nil, 'UTF-8')
 
-    doc2.search('.t.product').each do |produkt|
+      doc2.search('.t.product').each do |produkt|
 
-      meno = produkt.search('h2 a').text.gsub('...','')
-      cena = produkt.search('.price').text.split(' ')
-      platnostDo = produkt.search('.promoUntil').text
-      platnostDo.sub!(/.*?(?=\d)/im, '')
+        meno = produkt.search('h2 a').text.gsub(/[.\r]/,'')
 
-      puts meno #\\r ??
-      puts cena[0] +' '+ platnostDo[0..-3] #+' '+obchod=Tesco
-      puts ''
+        cena = produkt.search('.price').text.split(' ')
+        cena_float = cena[0].sub(',','.').to_f
+
+        platnostDo = produkt.search('.promoUntil').text
+        platnostDo.sub!(/.*?(?=\d)/im, '')
+
+        puts "#{meno} #{cena_float} #{platnostDo}"
+
+      end
+      page +=1
     end
-    page +=1
   end
+
 end
 # subject.save
 #  end
