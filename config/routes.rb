@@ -30,6 +30,7 @@ VOSShoppingList::Application.routes.draw do
 
   match '/shoplists', to: 'shoplists#index', via: 'get'
 
+  #match '/shoplistremove', to: 'shoplists#destroy', via: 'delete'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

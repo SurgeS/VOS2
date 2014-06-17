@@ -1,3 +1,13 @@
+<style>
+    #linkButton {
+        margin-top: 10px;
+        background:none!important;
+        border:none;
+        padding:0!important;
+        color: gainsboro;
+    }
+</style>
+
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
@@ -16,7 +26,7 @@
       <nav>
         <ul class="nav pull-right">
           <% if signed_in? %>
-            <li><%= link_to "Odhlásiť sa", signout_path, method: "delete" %></li>
+            <li><%= button_to "Odhlásiť sa", signout_path, method: :delete, id: 'linkButton' %></li>
           <% else %>
             <li><%= link_to "Domov", root_path %></li>
             <li><%= link_to "Prihlásiť sa", signin_path %></li>
