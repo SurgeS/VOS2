@@ -39,6 +39,7 @@ $(document).ready(function () {
         }
         else if(shopy[j] == max){
             maxID=null;
+            break;
         }
     }
     for (var j = 2; j < 7; j++) {
@@ -48,6 +49,7 @@ $(document).ready(function () {
         }
         else if(shopy[j] == min){
             minID=null;
+            break;
         }
     }
     if(minID != null)
