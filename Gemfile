@@ -50,6 +50,8 @@ gem 'bcrypt-ruby', '3.1.2'
 gem 'progress_bar'
 gem 'sunspot_solr'
 gem 'sunspot_rails'
+
+gem 'nokogiri'
 # Use unicorn as the app server
 # gem 'unicorn'
 

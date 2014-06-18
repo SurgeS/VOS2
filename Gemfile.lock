@@ -195,6 +195,7 @@ DEPENDENCIES
   factory_girl_rails (= 4.2.1)
   jbuilder (~> 1.2)
   jquery-rails
+  nokogiri
   pg
   progress_bar
   rails (= 4.0.2)
